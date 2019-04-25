@@ -39,6 +39,11 @@ class Bot {
         mainWindow.appendInfoText("사이트 연결중");
         connectTo(myURL);
     }
+    void focus(){
+        Actions actions = new Actions(driver);
+        WebElement element = driver.findElement(By.id("recommend_join"));
+        actions.moveToElement(element).perform();
+    }
 
     void writeComment() {
         WebElement id = driver.findElement(By.id("comment_nick"));

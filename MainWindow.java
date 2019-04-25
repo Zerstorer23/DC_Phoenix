@@ -32,6 +32,7 @@ public class MainWindow {
             if(!bot.initDone) return;
             bot.clear();
             bot.connectTo(myURL);
+            bot.focus();
         });
         CommentButton.addActionListener(e -> {
             if(!bot.initDone) return;
@@ -109,6 +110,5 @@ public class MainWindow {
         String prev = viewtextpane.getText();
         prev+="\n"+text;
         viewtextpane.setText(prev);
-
     }
 }
