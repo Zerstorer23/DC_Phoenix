@@ -25,7 +25,17 @@ class Bot {
             readScript();
         }
         mainWindow.appendInfoText("브라우져 시동중");
-        initBrowser();
+        try {
+            initBrowser();
+        }catch (Exception e){
+            mainWindow.setText("크롬 드라이버 문제 발생. 프로그램 종료후 다시 시도하세요. 5초후 자동종료합니다.");
+            try {
+                Thread.sleep(5500);
+            } catch (InterruptedException e1) {
+                e1.printStackTrace();
+            }
+            System.exit(1);
+        }
         mainWindow.appendInfoText("사이트 연결중");
         connectTo(myURL);
     }
