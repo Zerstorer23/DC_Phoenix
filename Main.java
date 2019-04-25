@@ -37,6 +37,7 @@ public class Main {
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
+            mainWindow.appendInfoText("script.txt 파일이 존재하지 않습니다.");
         }
         mainWindow.appendInfoText("자바스크립트: ");
         mainWindow.appendInfoText(script);

@@ -16,7 +16,7 @@ import static com.company.Main.*;
 class Bot {
     WebDriver driver;
     boolean initDone = false;
-    public static String yudongpw="1234";
+    private static String yudongpw="1234";
     void initialise() {
         mainWindow.delaySettingPanel();
         readSetting();
@@ -157,6 +157,7 @@ class Bot {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            mainWindow.appendInfoText("settings.txt 혹은 relies.txt 파일이 존재하지 않습니다.");
         }
         System.out.println("Reading " + "settings.txt" + " DONE!");
     }
@@ -180,15 +181,19 @@ class Bot {
 
     private void initBrowser() {
         System.out.println("Initiating Chrome Driver");
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        try{
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");}
+        catch (Exception e){
+            mainWindow.appendInfoText("chromedriver.exe 파일이 존재하지 않습니다.");
+        }
         Map<String, String> mobileEmulation = new HashMap<>();
         mobileEmulation.put("deviceName", "Nexus 5");
         ChromeOptions options = new ChromeOptions();
         try {
             options.addExtensions(new File("Adguard.crx")); //AdGuard
             mainWindow.appendInfoText("Adguard 로드");
-        } catch (Exception ignored) {
-
+        } catch (Exception e) {
+            mainWindow.appendInfoText("Adguard 사용 안함");
         }
         options.setExperimentalOption("mobileEmulation", mobileEmulation);
         driver = new ChromeDriver(options);
