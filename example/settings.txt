@@ -1,0 +1,7 @@
+##프로그램 설정 파일입니다.
+https://gall.dcinside.com/board/view/?id=comic_new1&no=9237244&s_type=search_all&s_keyword=%EB%8C%80%EC%A3%BC%EC%9E%91&page=1
+코드필요,false
+스크립트사용,true
+유동비밀번호,1234
+##코드 필요 = 마이너 갤러리 등 추천시 코드입력이 필요 (기본 false)
+##스크립트 사용 = 자바스크립트 사용 특수추천 (기본 true)

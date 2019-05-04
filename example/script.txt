@@ -1,0 +1,4 @@
+##자바스크립트를 이용한 추천 기능입니다. 추천 대신에 아래의 코드가 실행됩니다.
+for (var i = 0; i < 26; i++) {
+document.getElementById("recommend_join").click();
+}
