@@ -19,7 +19,7 @@ class ViewAttack {
             int finalI = i;
             Thread go = new Thread(() -> attack(finalI));
             go.start();
-//            mainWindow.appendViewText("[Core " + i + "] is online.");
+            mainWindow.appendViewText("[Core " + i + "] is online.");
         }
         countdown();
     }
